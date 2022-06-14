@@ -53,7 +53,7 @@ body{
     display: inline-flex;
     
     
-    padding: 0 2.4rem;
+    padding: 0 3.2rem;
     align-items: center;
     text-align: center;
     border-radius: 0.25rem;
@@ -225,6 +225,24 @@ nav.show div.icon-close{
     visibility: visible;
     opacity: 1;
     top: 2.4rem;
+}
+
+
+
+/*================================================================================================CALENDAR*/
+.calendar{
+    opacity: 0;
+    visibility: hidden;
+}
+.calendar{
+    opacity: 1;
+    visibility: visible;
+
+    width: 40rem;
+    height: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--base-color-second);
 }
 
 
