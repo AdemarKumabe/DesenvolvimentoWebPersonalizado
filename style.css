@@ -3,7 +3,7 @@
 :root{
     --header-height: 7.2rem;
 
-    --hue: 270; /*criada uma variavel de cor para que esta sendo usada em h1 e button, otimizando as alterações de cores
+    --hue: 120; /*criada uma variavel de cor para que esta sendo usada em h1 e button, otimizando as alterações de cores
                 desta forma podemos alterar as cores do tema do site com uma simples alteração da variavel --hue*/
     /*HSL color mode*/
 
@@ -53,7 +53,7 @@ body{
     display: inline-flex;
     
     
-    padding: 0 3.2rem;
+    padding: 0 2.4rem;
     align-items: center;
     text-align: center;
     border-radius: 0.25rem;
@@ -225,24 +225,6 @@ nav.show div.icon-close{
     visibility: visible;
     opacity: 1;
     top: 2.4rem;
-}
-
-
-
-/*================================================================================================CALENDAR*/
-.calendar{
-    opacity: 0;
-    visibility: hidden;
-}
-.calendar{
-    opacity: 1;
-    visibility: visible;
-
-    width: 40rem;
-    height: 25rem;
-    margin-left: auto;
-    margin-right: auto;
-    background: var(--base-color-second);
 }
 
 
@@ -596,7 +578,7 @@ footer .social a:hover{
         justify-content: space-between;
         margin: 0 auto;
     }
-    #home .image{
+    #home .slider{
         order: 1;
     }
     #home .text{
