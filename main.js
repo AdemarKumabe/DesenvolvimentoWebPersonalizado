@@ -130,3 +130,18 @@ window.addEventListener('scroll', function(){
     backToTop()
     activeMenuAtCurrentSection()
 })
+
+
+
+const imageGallery = document.getElementById("imageGallery");
+const images = imageGallery.getElementsByTagName("img");
+let currentIndex = 0;
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  const offsetX = -currentIndex * 100;
+  imageGallery.style.transform = `translateX(${offsetX}%)`;
+}
+
+// Avance automaticamente a cada 3 segundos (3000 milissegundos)
+setInterval(nextImage, 3000);

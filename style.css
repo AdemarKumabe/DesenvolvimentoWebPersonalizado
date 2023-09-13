@@ -234,10 +234,15 @@ nav.show div.icon-close{
 #home{
     overflow: hidden;
 }
-#home .image{
-    position: relative;
+#home .galeria{
+
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 1s ease-in-out;
 }
-#home .image::before{ /*sudo element, podemos criar um elemnento ficticion no caso estamos criando um elemento dentro do elemento img, before significa antes do conteudo.*/
+#home .galeria::before{ /*sudo element, podemos criar um elemnento ficticion no caso estamos criando um elemento dentro do elemento img, before significa antes do conteudo.*/
     content: '';
     height: 100%;
     width: 100%;
@@ -245,14 +250,16 @@ nav.show div.icon-close{
     position:absolute;
     top: -16.8%;
     left: 16.7%;
-    z-index: 0;
+    z-index: -1;
 }
-#home .image img {
-    position: relative; /*redimensionamos a imagem um pouco a esquerda*/
-    right: 4.68rem;
+#home .galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
 }
-#home .image img,
-#home .image::before{
+#home .galeria img,
+#home .galeria::before{
     border-radius: 0.4rem;
 }
 #home .text{
@@ -536,7 +543,7 @@ footer .social a:hover{
 @media(min-width: 1200px){
     /*reusable classes*/
     .container{
-        max-width: 1120px;
+        max-width: 920px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -579,7 +586,11 @@ footer .social a:hover{
         margin: 0 auto;
     }
     #home .slider{
-        order: 1;
+        width: 500px; /* Largura da moldura do retrato */
+        height: 400px; /* Altura da moldura do retrato */
+        overflow: hidden;
+        border: 5px solid #ccc; /* Borda do retrato */
+        position: relative;
     }
     #home .text{
         order: 0;
