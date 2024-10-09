@@ -3,18 +3,18 @@
 :root{
     --header-height: 7.2rem;
 
-    --hue: 300; /*criada uma variavel de cor para que esta sendo usada em h1 e button, otimizando as alterações de cores
+    --hue: 50; /*criada uma variavel de cor para que esta sendo usada em h1 e button, otimizando as alterações de cores
                 desta forma podemos alterar as cores do tema do site com uma simples alteração da variavel --hue*/
     /*HSL color mode*/
 
     /*CORES PADRÃO*/
-    --base-color: hsl(var(--hue) 36% 57%);
+    --base-color: hsl(var(--hue) 50% 50%);
     --base-color-second: hsl(var(--hue) 65% 88%);
     --base-color-alt: hsl(var(--hue) 80% 70%); 
     --title-color: hsl(var(--hue) 41% 10%);
     --text-color: hsl(0 0% 46%);
     --text-color-light: hsl(0 0% 98%);
-    --body-color: hsl(0 0% 98%);
+    --body-color: hsl(0, 0%, 100%);
     
     --title-font-size:3.0rem;
     --subtitle-font-size:1.6rem;
@@ -23,14 +23,14 @@
 }
 
 
-
+@media (max-width: 600px) {
 /*================================================================================================BASE*/
 html{
     scroll-behavior: smooth;
-    font-size: 62.5%;
+    font-size: 52.5%;
 }
 body{
-    font: 400 1.6rem var(--body-font);
+    font: 400 1.8rem var(--body-font);
     color: var(--text-color);
     background-color: var(--body-color)  
 }
@@ -52,7 +52,7 @@ body{
     
     display: inline-flex;
     
-    
+    margin-bottom: 1rem;
     padding: 0 2.4rem;
     align-items: center;
     text-align: center;
@@ -84,7 +84,7 @@ body{
     gap: 3.2rem;
 }
 .section {
-    padding: calc(8rem + var(--header-height)) 0;
+    padding: calc(1.5rem + var(--header-height)) 0;
 }
 .section .title{ /*para todo titulo dentro de section aplicar margem inferior de 1rem */
     margin-bottom: 1.6rem;
@@ -115,8 +115,6 @@ body{
 #header.scroll {
     box-shadow: 0px 0px 12px var(--base-color);
 }
-
-
 /*================================================================================================LOGO */
 .logo {
     font: 700 2.1rem var(--title-font);
@@ -234,9 +232,9 @@ nav.show div.icon-close{
 #home{
     overflow: hidden;
 }
+
 #home .galeria{
-
-
+    
     width: 100%;
     height: 100%;
     display: flex;
@@ -251,7 +249,7 @@ nav.show div.icon-close{
 }
 #home .galeria img,
 #home .galeria::after{
-    border-radius: 0.4rem;
+    border-radius: 1rem;
     
     
 }
@@ -530,5 +528,1055 @@ footer .social a:hover{
         hsla(var(--hue), 36%, 57%, 1)
     );
 }
-
+}
 /*================================================================================================RESPONSIVO*/
+
+
+
+
+
+@media (min-width: 600px) and (max-width: 1200px) {
+    
+    /*================================================================================================BASE*/
+    html{
+        scroll-behavior: smooth;
+        font-size: 60.5%;
+    }
+    body{
+        font: 400 1.6rem var(--body-font);
+        color: var(--text-color);
+        background-color: var(--body-color)  
+    }
+    .title{
+        font:700 1.5rem var(--title-font);
+        color: var(--title-color);
+        -webkit-font-smoothing: auto;
+    }
+    .title-alt{
+        font:700 2.4rem "Poppins", sans-serif;
+        color: var(--title-color);
+    }
+    .button{ /* Botão Agendar um horario*/
+        
+        background-color: var(--base-color);
+        color: var(--text-color-light);
+        height: 5.4rem;
+        width: 21.4rem;
+        
+        display: inline-flex;
+        
+        
+        padding: 0 2.4rem;
+        align-items: center;
+        text-align: center;
+        border-radius: 0.25rem;
+        font: 500 1.6rem var(--title-font);
+        transition: background 0.3s;
+    }
+    .button:hover{ /*interação de passar o mouse por cima troca de cor*/
+        background: var(--base-color-alt);
+    }
+    
+    
+    
+    
+    
+    /*===============================================================================================s=LAYOUT*/
+    .container{
+        margin-left: 2.4rem; /* aqui fizemos a mesma coisa do header, porem pegamos a medida do espaço lateral da pagina e dividimos por 16*/
+        margin-right: 2.4rem; 
+    }
+    #home .container{
+        margin: 0;
+    }
+    #about .container{
+        margin: 0;
+    }
+    .grid{ /*com a propriedade grid podemos habilitar o gap onde quando temos dois filhos, com o gap damos espaço entre eles otimizando ainda mais o alinhamento entre elementos filho*/
+        display: grid;
+        gap: 2.4rem;
+    }
+    .section {
+        padding: calc(8rem + var(--header-height)) 0;
+    }
+    .section .title{ /*para todo titulo dentro de section aplicar margem inferior de 1rem */
+        margin-bottom: 1.6rem;
+    }
+    .section .subtitle{
+        font-size: var(--subtitle-font-size);
+    }
+    .section header{
+        margin-bottom: 6.4rem;
+    }
+    .section header strong{
+        color: var(--base-color);
+    }
+    #header{
+        border-bottom: 1px solid #E4E4E4;
+        margin-bottom: 2rem;
+        display: flex; /*torna o conteudo do header flexivel, se adaptando a sua largura ao eixo horizontal
+        possibilantando um ficar um do lado do outro*/
+    
+    
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-color: var(--body-color);
+        width: 100%;
+    }
+    #header.scroll {
+        box-shadow: 0px 0px 12px var(--base-color);
+    }
+    
+    
+    /*================================================================================================LOGO */
+    .logo {
+        font: 700 2.1rem var(--title-font);
+        color: var(--title-color);   
+    }
+    .logo span{  /*dentro da logo procura para mim o span */
+        color: var(--base-color);
+    }
+    .logo-alt span{
+        color: var(--body-color);
+    }
+    
+
+
+    .toggle {
+        color: var(--base-color);
+        font-size: 2.4rem;
+        cursor: pointer;
+        display: none;
+    }
+
+
+
+
+    /*================================================================================================NAVEGATION */
+    /* NAVIGATION */
+nav {
+    
+    height: var(--header-height); /* altura do cabeçalho */
+    display: flex; /* layout flexível */
+    align-items: center; /* centralização vertical */
+    justify-content: space-between; /* distribui espaço entre os itens */
+    width: 100%; /* largura total */
+    position: relative; /* permite posicionamento absoluto de elementos internos */
+}
+
+nav .menu {
+    margin-right: .1rem;
+    opacity: 1; /* torna o menu visível */
+    visibility: visible; /* garante que o menu seja visível */
+    top: 0; /* posição inicial no topo */
+    transition: opacity 0.2s, visibility 0.2s; /* suaviza a transição */
+}
+
+nav .menu ul {
+    
+    display: flex; /* exibe os itens em linha */
+    list-style: none; /* remove os marcadores da lista */
+    padding: 0; /* remove o padding padrão */
+    margin: 0; /* remove a margem padrão */
+}
+
+nav ul li {
+    
+    text-align: center;
+    margin: 0rem -.8rem; /* espaçamento horizontal entre os itens */
+    padding: 0;
+}
+
+nav ul li a {
+    transition: color 0.2s;
+    position: relative;
+    text-decoration: none; /* remove o sublinhado dos links */
+}
+
+/* Estilos de hover */
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--base-color);
+}
+
+nav ul li a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--base-color);
+    position: absolute;
+    left: 0;
+    bottom: -2.4rem;
+    transition: width 0.2s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+    
+    
+    
+    /*================================================================================================HOME*/
+    .container grid{
+        display: flex;
+        width: 100%;
+    }
+    #home{
+        
+        display: flex;
+        overflow: hidden;
+        height: 80rem;
+        width: 100%;
+        
+    }
+    .slider{
+        width: 80%;
+        overflow: hidden;
+        border-radius: 1rem;
+    }
+    #home .galeria{
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        transition: transform 1s ease-in-out;
+    }
+    
+    #home .galeria img {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+    #home .galeria img,
+    #home .galeria::after{
+        border-radius: 0.4rem;
+    }
+    #home .text{
+        margin-left: 2.4rem; /* aqui fizemos a mesma coisa do header, porem pegamos a medida do espaço lateral da pagina e dividimos por 16*/
+        margin-right: 2.4rem; 
+        text-align: left;
+        width: 50%;
+        margin-top: 10rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+    #home .text h1{
+        margin-bottom: 1.6rem;
+    }
+    #home .text p{
+        margin-bottom: 3.2rem;
+    }
+    
+    
+    
+    /*================================================================================================ABOUT*/
+    #about{
+        background: white;
+        display: flex;
+        justify-content: center;
+    }
+    #about .container.grid {
+        display: flex;
+        align-items: center; /* Alinha verticalmente */
+    }
+    #about .image{
+        width: 50%; /* Ajuste a largura conforme necessário */
+        display: flex;
+        justify-content: center; /* Centraliza a imagem horizontalmente */
+        align-items: center; /* Centraliza a imagem verticalmente */
+        position: relative;
+    
+    }
+    #about .image::before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: var(--base-color-second);
+        position: absolute;
+        top: 0; /* Remove o deslocamento */
+        left: 0; /* Remove o deslocamento */
+        z-index: -2;
+    }
+    #about .image img {
+        position: relative;
+        z-index: 1; /* Coloca a imagem acima do pseudoelemento */
+        border-radius: 0.4rem;
+        max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+        height: auto;
+    }
+    #about .image img,
+    #about .image::before{
+        border-radius: 0.4rem;
+    }
+    #about .text {
+        margin-left: 2.4rem;
+        margin-right: 2.4rem;
+        width: 50%; /* Mantém o texto com 50% */
+    }
+    
+    
+    
+    /*================================================================================================SERVICES*/
+    .cards{
+        display: flex;
+        gap: 2.4rem;
+    }
+    .card {
+        padding: 5.8rem 3.2rem;
+        box-shadow: 0px 0px 12px 0px hsla(0, 0%, 0%, 0.08);
+        border-bottom:  0.4rem solid var(--base-color);
+        border-radius: 0.4rem 0.4rem 0 0;
+        text-align: center;
+    }
+    .card i {
+        display: block;
+        margin-bottom:  2.4rem;
+        font-size: 5rem;
+        color: var(--base-color);
+    }
+    .card .title{
+        font-size: 2.4rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    
+    
+    /*================================================================================================TESTIMONIALS*/
+    #testimonials{
+        background: white;
+    }
+    #testimonials .container{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #testimonials header{
+        margin-left: 2.4rem;
+        margin-right: 2.4rem;
+        margin-bottom: 0;
+    }
+    #testimonials blockquote{
+    padding: 3.2rem;
+    box-shadow: 0px 0px 12px hsla(0, 0%, 0%, 0.08);
+    border-radius: 0.4rem;
+    }
+    #testimonials blockquote p{
+        position: relative;
+        text-indent: 3.0rem;
+        margin-bottom: 2.4rem;
+        color:var(--title-color)
+    }
+    #testimonials blockquote p span{
+        font: 700 2.4rem serif;
+        position: absolute;
+        top: -.6rem;
+        left: -3.0rem;
+        color: var(--base-color); 
+    }
+    #testimonials cite{
+        display: flex;
+        align-items: center;
+        font-style: normal;
+    }
+    #testimonials cite img{
+        width: 4.8rem;
+        height: 4.8rem;
+        object-fit: cover; /*enquadra a imagem que esta dentro da tag img e encaixe cubrindo todo espaço que estiver ali*/
+        clip-path: circle(); /*criar uma mascara circular sobre a imagem*/
+        margin-right: .8rem;
+    }
+    
+    
+    
+    /*================================================================================================SWIPER*/
+    .swiper-slide{
+        height: auto;
+        padding: 8rem 1.6rem;
+    }
+    .swiper-pagination-bullet{
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    .swiper-pagination-bullet-active {
+        background: var(--base-color);
+    }
+    
+    
+    
+    /*================================================================================================CONTACT*/
+    #button_whatsapp{
+        background-color: var(--base-color);
+        color: var(--text-color-light);
+        height: 5.6rem;
+        width: 23.6rem;
+        
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        padding: 0 3.2rem;
+        border-radius: 0.4rem;
+        font: 500 1.6rem 'DM Sans', sans-serif;
+        transition: background 0.3s;
+    }
+    #button_whatsapp:hover{
+        background: var(--base-color-alt);
+    }
+    #contat .grid{
+        gap: 6.4rem;
+    }
+    #contact .text p{
+        margin-bottom: 6.4rem;
+    }
+    #contact #button_whatsapp i{
+        font-size: 2.4rem;
+        margin-right: 1rem;
+    }
+    #contact .grid ul{ 
+        display: grid;
+        gap: 3.2rem;
+    }
+    #contact .links ul i{
+        margin-right: 1.2rem;
+        font-size: 2.4rem;
+        color: var(--base-color);
+    }
+    #contact ul li{
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    /*================================================================================================FOOTER*/
+    footer{
+        background: var(--base-color);
+    }
+    footer.section{
+        padding: 6.4rem 0;
+    }
+    footer .logo{
+        display: inline-block;
+        margin-bottom: 2.4rem;
+    }
+    footer .brand p{
+        color: var(--text-color-light);
+        margin-bottom: 1.2rem;
+    }
+    footer i{
+        font-size: 2.4rem;
+        color: var(--text-color-light);
+    }
+    footer .social{
+        grid-auto-flow: column;
+        width: fit-content;
+    }
+    footer .social a{
+        transition: 0.3s;
+        display: inline-block;
+        
+        /*ou*/
+        /* display: flex;
+           gap: 2rm;
+        */
+    }
+    footer .social a:hover{
+        transform: translateY(-8px);
+    }
+    
+    /*================================================================================================BACK-TO-TOP*/
+    .back-to-top{
+        background: var(--base-color);
+        color: var(--text-color-light);
+    
+        position: fixed;
+    
+        right: 1.6rem;
+        bottom: 1.6rem;
+    
+        padding: 0.48rem;
+        clip-path: circle();
+    
+        font-size: 2.56rem;
+        line-height: 0;
+    
+        visibility: hidden;
+        opacity: 0;
+        
+        transition: 0.3s;
+        transform: translateY(130%);
+    }
+    .back-to-top.show{
+        visibility: visible;
+        opacity: 1;
+    
+        transform: translateY(0);
+    }
+    
+    
+    /*================================================================================================DIVIDER*/
+    .divider-1 { /*linha dividindo a section com cor gradiente*/
+        height: 1px;
+        background: linear-gradient(
+            270deg, 
+            hsla(var(--hue), 36%, 57%, 1),
+            hsla(var(--hue), 65%, 88%, 0.34)
+        );
+    }
+    .divider-2 { /*linha dividindo a section com cor gradiente*/
+        display: flex;
+        height: 1px;
+        background: linear-gradient(
+            270deg, 
+            hsla(var(--hue), 65%, 88%, 0.34),
+            hsla(var(--hue), 36%, 57%, 1)
+        );
+    }
+    .divider-3 { /*linha dividindo a section com cor gradiente*/
+        display: flex;
+        height: 1px;
+        background: linear-gradient(
+            270deg, 
+            hsla(var(--hue), 36%, 57%, 1),
+            hsla(var(--hue), 65%, 88%, 0.34)
+        );
+    }
+    .divider-4 { /*linha dividindo a section com cor gradiente*/
+        display: flex;
+        height: 1px;
+        background: linear-gradient(
+            270deg, 
+            hsla(var(--hue), 65%, 88%, 0.34),
+            hsla(var(--hue), 36%, 57%, 1)
+        );
+    }
+}
+    /*================================================================================================RESPONSIVO*/
+    
+
+
+
+    
+@media (min-width: 1201px) {
+    
+    /*================================================================================================BASE*/
+    html{
+        scroll-behavior: smooth;
+        font-size: 60.5%;
+    }
+    body{
+        font: 400 2.6rem var(--body-font);
+        color: var(--text-color);
+        background-color: var(--body-color)  
+    }
+    .title{
+        font:700 2rem  var(--title-font);
+        color: var(--title-color);
+        -webkit-font-smoothing: auto;
+    }
+    .title-alt{
+        font:700 2.4rem "Poppins", sans-serif;
+        color: var(--title-color);
+    }
+    .button{ /* Botão Agendar um horario*/
+        
+        background-color: var(--base-color);
+        color: var(--text-color-light);
+        height: 5.4rem;
+        width: 21.4rem;
+        
+        display: inline-flex;
+        
+        
+        padding: 0 2.4rem;
+        align-items: center;
+        text-align: center;
+        border-radius: 0.25rem;
+        font: 500 1.6rem var(--title-font);
+        transition: background 0.3s;
+    }
+    .button:hover{ /*interação de passar o mouse por cima troca de cor*/
+        background: var(--base-color-alt);
+    }
+    
+    
+    
+    
+    
+    /*===============================================================================================s=LAYOUT*/
+    .container{
+        margin-left: 2.4rem; /* aqui fizemos a mesma coisa do header, porem pegamos a medida do espaço lateral da pagina e dividimos por 16*/
+        margin-right: 2.4rem; 
+    }
+    #home .container{
+        margin: 0;
+    }
+    #about .container{
+        margin: 0;
+    }
+    .grid{ /*com a propriedade grid podemos habilitar o gap onde quando temos dois filhos, com o gap damos espaço entre eles otimizando ainda mais o alinhamento entre elementos filho*/
+        display: grid;
+        gap: 3.2rem;
+    }
+    .section {
+        padding: calc(8rem + var(--header-height)) 0;
+    }
+    .section .title{ /*para todo titulo dentro de section aplicar margem inferior de 1rem */
+        margin-bottom: 1.6rem;
+    }
+    .section .subtitle{
+        font-size: var(--subtitle-font-size);
+    }
+    .section header{
+        margin-bottom: 6.4rem;
+    }
+    .section header strong{
+        color: var(--base-color);
+    }
+    #header{
+        border-bottom: 1px solid #E4E4E4;
+        margin-bottom: 2rem;
+        display: flex; /*torna o conteudo do header flexivel, se adaptando a sua largura ao eixo horizontal
+        possibilantando um ficar um do lado do outro*/
+    
+    
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-color: var(--body-color);
+        width: 100%;
+    }
+    #header.scroll {
+        box-shadow: 0px 0px 12px var(--base-color);
+    }
+    
+    
+    /*================================================================================================LOGO */
+    .logo {
+        font: 700 2.1rem var(--title-font);
+        color: var(--title-color);   
+    }
+    .logo span{  /*dentro da logo procura para mim o span */
+        color: var(--base-color);
+    }
+    .logo-alt span{
+        color: var(--body-color);
+    }
+    
+
+
+    .toggle {
+        color: var(--base-color);
+        font-size: 2.4rem;
+        cursor: pointer;
+        display: none;
+    }
+
+
+
+
+    /*================================================================================================NAVEGATION */
+    /* NAVIGATION */
+nav {
+    
+    height: var(--header-height); /* altura do cabeçalho */
+    display: flex; /* layout flexível */
+    align-items: center; /* centralização vertical */
+    justify-content: space-between; /* distribui espaço entre os itens */
+    width: 100%; /* largura total */
+    position: relative; /* permite posicionamento absoluto de elementos internos */
+}
+
+nav .menu {
+    margin-right: .1rem;
+    opacity: 1; /* torna o menu visível */
+    visibility: visible; /* garante que o menu seja visível */
+    top: 0; /* posição inicial no topo */
+    transition: opacity 0.2s, visibility 0.2s; /* suaviza a transição */
+}
+
+nav .menu ul {
+    
+    display: flex; /* exibe os itens em linha */
+    list-style: none; /* remove os marcadores da lista */
+    padding: 0; /* remove o padding padrão */
+    margin: 0; /* remove a margem padrão */
+}
+
+nav ul li {
+    
+    text-align: center;
+    margin: 0rem 0.5rem; /* espaçamento horizontal entre os itens */
+    padding: 0;
+}
+
+nav ul li a {
+    transition: color 0.2s;
+    position: relative;
+    text-decoration: none; /* remove o sublinhado dos links */
+}
+
+/* Estilos de hover */
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--base-color);
+}
+
+nav ul li a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--base-color);
+    position: absolute;
+    left: 0;
+    bottom: -2.4rem;
+    transition: width 0.2s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+    
+    
+    
+    /*================================================================================================HOME*/
+    .container grid{
+        display: flex;
+        width: 100%;
+    }
+    #home{
+        
+        display: flex;
+        overflow: hidden;
+        height: 80rem;
+        width: 100%;
+        
+    }
+    .slider{
+        width: 100%;
+        overflow: hidden;
+        border-radius: 1rem;
+    }
+    #home .galeria{
+
+        width: 75rem;
+        height: 100%;
+        display: flex;
+        transition: transform 1s ease-in-out;
+    }
+    
+    #home .galeria img {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+    #home .galeria img,
+    #home .galeria::after{
+        border-radius: 0.4rem;
+    }
+    #home .text{
+        margin-left: 2.4rem; /* aqui fizemos a mesma coisa do header, porem pegamos a medida do espaço lateral da pagina e dividimos por 16*/
+        margin-right: 2.4rem; 
+        text-align: left;
+        width: 50%;
+        margin-top: 20rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+    #home .text h1{
+        margin-bottom: 1.6rem;
+    }
+    #home .text p{
+        margin-bottom: 3.2rem;
+    }
+    
+    
+    
+    /*================================================================================================ABOUT*/
+#about {
+    background: white;
+    display: flex;
+    justify-content: center;
+}
+
+#about .container.grid {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+}
+
+#about .image {
+    width: 50%; /* Ajuste a largura conforme necessário */
+    display: flex;
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: center; /* Centraliza a imagem verticalmente */
+    position: relative;
+}
+
+#about .image::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--base-color-second);
+    position: absolute;
+    top: 0; /* Remove o deslocamento */
+    left: 0; /* Remove o deslocamento */
+    z-index: 0;
+}
+
+#about .image img {
+    position: relative;
+    z-index: 1; /* Coloca a imagem acima do pseudoelemento */
+    border-radius: 0.4rem;
+    max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+    height: auto;
+}
+
+#about .text {
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    width: 50%; /* Mantém o texto com 50% */
+}
+
+    
+    
+    /*================================================================================================SERVICES*/
+    .cards{
+        display: flex;
+        gap: 2.4rem;
+    }
+    .card {
+        padding: 5.8rem 3.2rem;
+        box-shadow: 0px 0px 12px 0px hsla(0, 0%, 0%, 0.08);
+        border-bottom:  0.4rem solid var(--base-color);
+        border-radius: 0.4rem 0.4rem 0 0;
+        text-align: center;
+    }
+    .card i {
+        display: block;
+        margin-bottom:  2.4rem;
+        font-size: 5rem;
+        color: var(--base-color);
+    }
+    .card .title{
+        font-size: 2.4rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    
+    
+    /*================================================================================================TESTIMONIALS*/
+    #testimonials{
+        background: white;
+    }
+    #testimonials .container{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #testimonials header{
+        margin-left: 2.4rem;
+        margin-right: 2.4rem;
+        margin-bottom: 0;
+    }
+    #testimonials blockquote{
+    padding: 3.2rem;
+    box-shadow: 0px 0px 12px hsla(0, 0%, 0%, 0.08);
+    border-radius: 0.4rem;
+    }
+    #testimonials blockquote p{
+        position: relative;
+        text-indent: 3.0rem;
+        margin-bottom: 2.4rem;
+        color:var(--title-color)
+    }
+    #testimonials blockquote p span{
+        font: 700 2.4rem serif;
+        position: absolute;
+        top: -.6rem;
+        left: -3.0rem;
+        color: var(--base-color); 
+    }
+    #testimonials cite{
+        display: flex;
+        align-items: center;
+        font-style: normal;
+    }
+    #testimonials cite img{
+        width: 4.8rem;
+        height: 4.8rem;
+        object-fit: cover; /*enquadra a imagem que esta dentro da tag img e encaixe cubrindo todo espaço que estiver ali*/
+        clip-path: circle(); /*criar uma mascara circular sobre a imagem*/
+        margin-right: .8rem;
+    }
+    
+    
+    
+    /*================================================================================================SWIPER*/
+    .swiper-slide{
+        height: auto;
+        padding: 8rem 1.6rem;
+    }
+    .swiper-pagination-bullet{
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    .swiper-pagination-bullet-active {
+        background: var(--base-color);
+    }
+    
+    
+    
+    /*================================================================================================CONTACT*/
+    #button_whatsapp{
+        background-color: var(--base-color);
+        color: var(--text-color-light);
+        height: 5.6rem;
+        width: 23.6rem;
+        
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        padding: 0 3.2rem;
+        border-radius: 0.4rem;
+        font: 500 1.6rem 'DM Sans', sans-serif;
+        transition: background 0.3s;
+    }
+    #button_whatsapp:hover{
+        background: var(--base-color-alt);
+    }
+    #contat .grid{
+        gap: 6.4rem;
+    }
+    #contact .text p{
+        margin-bottom: 6.4rem;
+    }
+    #contact #button_whatsapp i{
+        font-size: 2.4rem;
+        margin-right: 1rem;
+    }
+    #contact .grid ul{ 
+        display: grid;
+        gap: 3.2rem;
+    }
+    #contact .links ul i{
+        margin-right: 1.2rem;
+        font-size: 2.4rem;
+        color: var(--base-color);
+    }
+    #contact ul li{
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    /*================================================================================================FOOTER*/
+    footer{
+        background: var(--base-color);
+    }
+    footer.section{
+        padding: 6.4rem 0;
+    }
+    footer .logo{
+        display: inline-block;
+        margin-bottom: 2.4rem;
+    }
+    footer .brand p{
+        color: var(--text-color-light);
+        margin-bottom: 1.2rem;
+    }
+    footer i{
+        font-size: 2.4rem;
+        color: var(--text-color-light);
+    }
+    footer .social{
+        grid-auto-flow: column;
+        width: fit-content;
+    }
+    footer .social a{
+        transition: 0.3s;
+        display: inline-block;
+        
+        /*ou*/
+        /* display: flex;
+           gap: 2rm;
+        */
+    }
+    footer .social a:hover{
+        transform: translateY(-8px);
+    }
+    
+    /*================================================================================================BACK-TO-TOP*/
+    .back-to-top{
+        background: var(--base-color);
+        color: var(--text-color-light);
+    
+        position: fixed;
+    
+        right: 1.6rem;
+        bottom: 1.6rem;
+    
+        padding: 0.48rem;
+        clip-path: circle();
+    
+        font-size: 2.56rem;
+        line-height: 0;
+    
+        visibility: hidden;
+        opacity: 0;
+        
+        transition: 0.3s;
+        transform: translateY(130%);
+    }
+    .back-to-top.show{
+        visibility: visible;
+        opacity: 1;
+    
+        transform: translateY(0);
+    }
+    
+    
+    /*================================================================================================DIVIDER*/
+    .divider-1 { /*linha dividindo a section com cor gradiente*/
+        height: 1px;
+        background: linear-gradient(
+            270deg, 
+            hsla(var(--hue), 36%, 57%, 1),
+            hsla(var(--hue), 65%, 88%, 0.34)
+        );
+    }
+    .divider-2 { /*linha dividindo a section com cor gradiente*/
+        display: flex;
+        height: 1px;
+        background: linear-gradient(
+            270deg, 
+            hsla(var(--hue), 65%, 88%, 0.34),
+            hsla(var(--hue), 36%, 57%, 1)
+        );
+    }
+    .divider-3 { /*linha dividindo a section com cor gradiente*/
+        display: flex;
+        height: 1px;
+        background: linear-gradient(
+            270deg, 
+            hsla(var(--hue), 36%, 57%, 1),
+            hsla(var(--hue), 65%, 88%, 0.34)
+        );
+    }
+    .divider-4 { /*linha dividindo a section com cor gradiente*/
+        display: flex;
+        height: 1px;
+        background: linear-gradient(
+            270deg, 
+            hsla(var(--hue), 65%, 88%, 0.34),
+            hsla(var(--hue), 36%, 57%, 1)
+        );
+    }
+    }
+    /*================================================================================================RESPONSIVO*/

@@ -1,4 +1,3 @@
-
 //Dom Document Model 
 /*abre a fecha menu quando clicar no icone menu e x*/
 
@@ -57,7 +56,7 @@ const swiper = new Swiper('.swiper-container', {
     keyboard: true,
     breakpoints:{
         767:{
-            slidesPerView:2,
+            slidesPerView:3,
             setWrapperSize:true
         }
     }
@@ -71,8 +70,8 @@ const swiper = new Swiper('.swiper-container', {
 /*ScrollReveal - mostrar elementos quando der scroll na pagina */
 const scrollReveal = ScrollReveal({
     origin: 'top',
-    distance: '30px',
-    duration: 700,
+    distance: '14px',
+    duration: 650,
     reset: true
 })
 
@@ -84,7 +83,7 @@ scrollReveal.reveal(`
 #contact .text, #contact .links,
 footer .brand, footer .social
 `,
-{interval :100})
+{interval :25})
 
 
 /* Botão voltar para o topo */
@@ -92,7 +91,7 @@ const backToTopButton = document.querySelector('.back-to-top')
 
 function backToTop(){
 
-    if(window.scrollY >= 560) {
+    if(window.scrollY >= 460) {
         backToTopButton.classList.add('show')
     } else {
         backToTopButton.classList.remove('show')
@@ -145,3 +144,4 @@ function nextImage() {
 
 // Avance automaticamente a cada 3 segundos (3000 milissegundos)
 setInterval(nextImage, 3000);
+
